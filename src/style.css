@@ -1,0 +1,249 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.calculator {
+  max-width: 60%;
+  min-width: 240px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) -2px -2px, rgba(255, 255, 255, 1) -2px -2px;
+  border-radius: 10px;
+}
+
+.calculator__title {
+  color: #0056ac;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calculator__input-group {
+  margin-bottom: 20px;
+}
+
+.calculator__label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.calculator__input,
+.calculator__button {
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.calculator__input[type="number"] {
+  appearance: none;
+}
+
+.calculator__input[type="number"]::-webkit-inner-spin-button,
+.calculator__input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+.calculator__button {
+  background-color: #0056ac;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease background-color, 0.2s ease transform;
+}
+
+.calculator__button:hover {
+  background-color: #003c79;
+}
+
+.calculator__button:active {
+  transform: scale(0.95);
+}
+
+.calculator__works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.work {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: inset -1px -1px rgba(255, 255, 255, 0.2);
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.work input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.work:hover {
+  box-shadow: inset -1px -1px rgba(255, 255, 255, 0.4);
+}
+
+.work.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.calculator__results {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.calculator__results.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.presets {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.presets h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.presets ul {
+  list-style: none;
+  padding: 0;
+}
+
+.presets li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.presets li span {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.presets li div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.presets button {
+  padding: 5px 10px;
+  background-color: #0056ac;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0;
+}
+
+.presets button:hover {
+  background-color: #003c79;
+}
+
+@media (max-width: 768px) {
+  .calculator__input,
+  .calculator__button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .calculator__works {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+  }
+
+  .work {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .presets li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .presets li span {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .presets li div {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .presets button {
+    flex-grow: 1;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 425px) {
+  .calculator__input,
+  .calculator__button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .calculator__works {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .work {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .presets li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .presets li span {
+    font-size: 12px;
+  }
+
+  .presets li div {
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .presets button {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+}
