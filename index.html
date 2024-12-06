@@ -4,42 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор оценок</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="icon" href="icon/favicon.svg">
-  <script src="calculator.js" defer></script>
+  <link rel="stylesheet" href="/src/styles/style.css">
+  <link rel="icon" href="./src/icon/favicon.svg">
 </head>
 <body>
-  <div class="calculator">
-    <h1 class="calculator__title">Калькулятор оценок по БРС</h1>
-    <form id="calculatorForm" class="calculator__form">
-      <div class="calculator__input-group">
-        <label class="calculator__label">Выберите тип оценивания:</label><br>
-        <label class="calculator__radio">
-          <input type="radio" name="type" value="pass" required> Зачет
-        </label><br>
-        <label class="calculator__radio">
-          <input type="radio" name="type" value="exam"> Экзамен
-        </label>
-      </div>
-      <div class="calculator__input-group">
-        <label class="calculator__label">Количество работ (макс. 16): 
-          <input type="number" id="worksCount" min="1" max="16" required class="calculator__input">
-        </label>
-        <button type="button" id="generateWorks" class="calculator__button">Создать поля для работ</button>
-      </div>
-      <div id="works" class="calculator__works"></div>
-      <div id="examInputs" class="calculator__input-group" style="display: none;">
-        <h3 class="calculator__subtitle">Данные по экзамену:</h3>
-        <label class="calculator__label">Полученный балл за экзамен: 
-          <input type="number" id="examScore" step="0.01" min="0" class="calculator__input">
-        </label><br>
-        <label class="calculator__label">Максимальный балл за экзамен: 
-          <input type="number" id="examMaxScore" step="0.01" min="0" class="calculator__input">
-        </label>
-      </div>      
-      <button type="submit" class="calculator__button">Рассчитать</button>
-    </form>
-    <div id="results" class="calculator__results"></div>
-  </div>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
